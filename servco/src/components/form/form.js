@@ -8,6 +8,7 @@ class Form extends Component {
       selected: "",
       input: "",
       noSpacesCount: "",
+      wordCounter: 0,
       imageUrl: "",
       letterCount: 0,
       twoWords: false
@@ -22,8 +23,18 @@ class Form extends Component {
   }
   handleInputChange = e => {
     e.preventDefault();
-    //checking for two words
     let input = e.target.value;
+    //counting words in string
+    function countWords(str) {
+      return str.trim().split(/\s+/).length;
+    }
+    let wordCount = countWords(input);
+    this.setState({
+      input: input,
+      wordCounter: wordCount
+    });
+
+    //checking for two words
     var regexp = /[a-zA-Z]+\s+[a-zA-Z]+/g;
     if (regexp.test(input)) {
       // at least 2 words consisting of letters

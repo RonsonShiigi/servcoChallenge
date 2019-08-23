@@ -5,6 +5,7 @@ import "./App.css";
 //components
 import Header from "./components/header/header";
 import Form from "./components/form/form";
+import Result from "./components/result/result";
 
 class App extends Component {
   render() {
