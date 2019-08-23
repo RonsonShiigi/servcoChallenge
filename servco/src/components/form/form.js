@@ -11,7 +11,8 @@ class Form extends Component {
       input: "",
       noSpacesCount: "",
       wordCounter: 0,
-      imageUrl: "",
+      imageUrl:
+        "https://thumbs.gfycat.com/ConventionalCreamyAlpaca-size_restricted.gif",
       letterCount: 0,
       twoWords: false,
       isHidden: true
@@ -61,6 +62,31 @@ class Form extends Component {
     });
 
     let value = e.target.value;
+    switch (value) {
+      case "Toyota":
+        this.setState({
+          imageUrl: "https://media.giphy.com/media/FoVBIIrLYR5Je/giphy.gif"
+        });
+        break;
+      case "Chevrolet":
+        this.setState({
+          imageUrl:
+            "https://thumbs.gfycat.com/ConventionalCreamyAlpaca-size_restricted.gif"
+        });
+        break;
+      case "Lexus":
+        this.setState({
+          imageUrl:
+            "https://media2.giphy.com/media/dYPP10IYewLr9CP1q5/source.gif"
+        });
+        break;
+      case "Subaru":
+        this.setState({
+          imageUrl: "https://i.makeagif.com/media/8-02-2015/w0NIAs.gif"
+        });
+        break;
+    }
+
     this.setState({ letterCount: value.length + this.state.noSpacesCount });
     console.log(e.target.value);
   };
@@ -93,6 +119,7 @@ class Form extends Component {
     return (
       <div id="formCont">
         <h1 className="selectHeader">Select Your Vehicle</h1>
+        <img id="logo" src={this.state.imageUrl} />
         <form id="form" onSubmit={this.submitForm}>
           <select id="selecter" onChange={this.handleSelectChange}>
             <option className="select" value="Chevrolet">

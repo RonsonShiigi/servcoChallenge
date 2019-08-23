@@ -13,7 +13,7 @@ class Result extends Component {
     return (
       <div id="resultCont">
         <h1>Results</h1>
-        <div id="make">You Selected a {this.props.selected}</div>
+        <div id="make">You Selected {this.props.selected}</div>
         <div className="count">
           Number of Words Inputed: {this.props.wordCount}
         </div>
