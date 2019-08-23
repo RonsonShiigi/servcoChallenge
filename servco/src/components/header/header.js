@@ -1,29 +1,35 @@
 import React from "react";
 import { Component } from "react";
 
-import { withStyles } from "@material-ui/core/styles";
-
-const styles = theme => ({
-  headerCont: {
-    display: "flex",
-    flexDirection: "row",
-    flexWrap: "wrap"
-  }
-});
+// import { withStyles } from "@material-ui/core/styles";
 
 class Header extends Component {
   render() {
     return (
       <div id="headerCont">
-        <a className="active" href="#home">
+        <a className="servco" href="#home">
           Servco
         </a>
-        <a href="#news">News</a>
-        <a href="#contact">Contact</a>
-        <a href="#about">About</a>
+        <a className="topLink" href="#news">
+          News
+        </a>
+        <a className="topLink" href="#contact">
+          Contact
+        </a>
+        <a className="topLink" href="#about">
+          About
+        </a>
       </div>
     );
   }
 }
 
-export default withStyles(styles)(Header);
+export default Header;
+
+// const styles = theme => ({
+//   headerCont: {
+//     display: "flex",
+//     flexDirection: "row",
+//     flexWrap: "wrap"
+//   }
+// });

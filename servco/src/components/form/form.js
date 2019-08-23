@@ -95,10 +95,18 @@ class Form extends Component {
         <h1 className="selectHeader">Select Your Vehicle</h1>
         <form id="form" onSubmit={this.submitForm}>
           <select id="selecter" onChange={this.handleSelectChange}>
-            <option value="Chevrolet">Chevrolet</option>
-            <option value="Lexus">Lexus</option>
-            <option value="Subaru">Subaru</option>
-            <option value="Toyota">Toyota</option>
+            <option className="select" value="Chevrolet">
+              Chevrolet
+            </option>
+            <option className="select" value="Lexus">
+              Lexus
+            </option>
+            <option className="select" value="Subaru">
+              Subaru
+            </option>
+            <option className="select" value="Toyota">
+              Toyota
+            </option>
           </select>
 
           <input
