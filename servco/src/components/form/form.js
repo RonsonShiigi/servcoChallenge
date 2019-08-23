@@ -49,23 +49,12 @@ class Form extends Component {
   };
 
   render() {
-    function validate(input) {
-      let checkMe = input.value;
-      let split = input.split(" ").filter(function(v) {
-        return v !== "";
-      });
-      if (split.legnth > 1) {
-        this.setState({ twoWords: true });
-      } else {
-        this.setState({ twoWords: false });
-      }
-    }
     function EnterTwoWords(props) {
       return <div className="errorDiv">Input Must Have Atleast Two Words</div>;
     }
 
     function InputValid(props) {
-      const isValid = props.twoWords;
+      const isValid = props.InputValid;
       if (!isValid) {
         return <EnterTwoWords />;
       } else {
@@ -89,7 +78,7 @@ class Form extends Component {
             placeholder="Enter Model and Color"
             onChange={this.handleInputChange}
           />
-          <EnterTwoWords validate={this.state.twoWords} />
+          <InputValid InputValid={this.state.twoWords} />
 
           <button id="submit">Submit</button>
         </form>
@@ -99,3 +88,15 @@ class Form extends Component {
 }
 
 export default Form;
+
+// function validate(input) {
+//     let checkMe = input.value;
+//     let split = input.split(" ").filter(function (v) {
+//         return v !== "";
+//     });
+//     if (split.legnth > 1) {
+//         this.setState({ twoWords: true });
+//     } else {
+//         this.setState({ twoWords: false });
+//     }
+// }
