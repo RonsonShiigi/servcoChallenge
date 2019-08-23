@@ -65,7 +65,7 @@ class Form extends Component {
   submitForm = e => {
     e.preventDefault();
     if (this.state.twoWords === false) {
-      alert("please put in model and color");
+      alert("Please Enter Model and Color");
     } else {
       console.log("submitted state", this.state);
     }

@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 
+//react router imports
+import { Route, Switch } from "react-router-dom";
+
 //components
 import Header from "./components/header/header";
 import Form from "./components/form/form";
@@ -10,11 +13,15 @@ import Result from "./components/result/result";
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Header />
-
-        <Form />
-      </div>
+      <React.Fragment>
+        <div className="App">
+          <Header />
+          <Switch>
+            <Route path="/form" component={Form} />
+            <Route path="/result" component={Result} />
+          </Switch>
+        </div>
+      </React.Fragment>
     );
   }
 }
