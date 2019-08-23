@@ -1,6 +1,8 @@
 import React from "react";
 import { Component } from "react";
 
+import Result from "../result/result";
+
 class Form extends Component {
   constructor(props) {
     super(props);
@@ -11,7 +13,8 @@ class Form extends Component {
       wordCounter: 0,
       imageUrl: "",
       letterCount: 0,
-      twoWords: false
+      twoWords: false,
+      isHidden: true
     };
   }
 
@@ -68,6 +71,7 @@ class Form extends Component {
       alert("Please Enter Model and Color");
     } else {
       console.log("submitted state", this.state);
+      this.setState({ isHidden: false });
     }
   };
 
@@ -106,21 +110,17 @@ class Form extends Component {
 
           <button id="submit">Submit</button>
         </form>
+
+        {!this.state.isHidden && (
+          <Result
+            selected={this.state.selected}
+            wordCount={this.state.wordCounter}
+            letterCount={this.state.letterCount}
+          />
+        )}
       </div>
     );
   }
 }
 
 export default Form;
-
-// function validate(input) {
-//     let checkMe = input.value;
-//     let split = input.split(" ").filter(function (v) {
-//         return v !== "";
-//     });
-//     if (split.legnth > 1) {
-//         this.setState({ twoWords: true });
-//     } else {
-//         this.setState({ twoWords: false });
-//     }
-// }
