@@ -47,11 +47,16 @@ class Form extends Component {
       this.setState({ twoWords: false });
     }
 
+    //counting nonwhitespace characters
     let noSpaces = input.replace(/\s/g, "");
     this.setState({
       noSpacesCount: noSpaces.length,
       letterCount: this.state.selected.length + noSpaces.length
     });
+
+    //counting nonwhitespace letters
+    let justLetters = input.replace(/[0-9]/g, "").replace(/\W/g, "");
+    console.log("justLetters", justLetters);
   };
 
   handleSelectChange = e => {
