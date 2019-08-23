@@ -6,6 +6,8 @@ class Form extends Component {
     super(props);
     this.state = {
       selected: "",
+      input: "",
+      noSpacesCount: "",
       imageUrl: "",
       letterCount: 0,
       twoWords: false
@@ -29,6 +31,12 @@ class Form extends Component {
     } else {
       this.setState({ twoWords: false });
     }
+
+    let noSpaces = input.replace(/\s/g, "");
+    this.setState({
+      noSpacesCount: noSpaces.length,
+      letterCount: this.state.selected.length + noSpaces.length
+    });
   };
 
   handleSelectChange = e => {
@@ -39,13 +47,17 @@ class Form extends Component {
     });
 
     let value = e.target.value;
-    this.setState({ letterCount: value.length });
+    this.setState({ letterCount: value.length + this.state.noSpacesCount });
     console.log(e.target.value);
   };
 
   submitForm = e => {
     e.preventDefault();
-    console.log("submitted state", this.state);
+    if (this.state.twoWords === false) {
+      alert("please put in model and color");
+    } else {
+      console.log("submitted state", this.state);
+    }
   };
 
   render() {
@@ -54,6 +66,7 @@ class Form extends Component {
     }
 
     function InputValid(props) {
+      //receiving props and checking from state to see if there are two words...direct call to state doesnt work?
       const isValid = props.InputValid;
       if (!isValid) {
         return <EnterTwoWords />;

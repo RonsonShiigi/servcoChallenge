@@ -11,7 +11,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <h1>Jah</h1>
+
         <Form />
       </div>
     );
