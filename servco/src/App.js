@@ -17,7 +17,7 @@ class App extends Component {
         <div className="App">
           <Header />
           <Switch>
-            <Route path="/form" component={Form} />
+            <Route path="/" component={Form} />
             <Route path="/result" component={Result} />
           </Switch>
         </div>
