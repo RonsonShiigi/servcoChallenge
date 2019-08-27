@@ -3,27 +3,27 @@
 }
 body {
   background-color: rgb(212, 212, 212);
-  font-family: "Playfair Display", serif;
+  font-family: "Open Sans Condensed", sans-serif;
 }
+.navbar {
+  background-color: rgb(3, 3, 216) !important;
+  color: white !important;
+}
+.navbar-brand {
+  /* font-family: "Kanit", sans-serif; */
 
-/* header styles */
-#headerCont {
-  display: flex;
-  background-color: rgb(3, 3, 168);
-  color: red;
   font-size: 35px;
-  justify-content: space-evenly;
-  padding: 10px;
 }
-.servco {
-  text-decoration: none;
-  align-self: flex-start;
-  color: white;
+.navbar {
+  background-color: rgb(2, 2, 179) !important;
+  color: white !important;
 }
 
-.topLink {
-  text-decoration: none;
-  color: white;
+.navbar-brand,
+.nav-link,
+.navbar-toggler,
+#navbarSupportedContent {
+  color: white !important;
 }
 
 /* form styles */
@@ -42,14 +42,15 @@ body {
 .select {
   text-align-last: center;
   font-size: 20px;
+  width: 300px;
 }
 
 #textInput {
   text-align: center;
-  margin: 10px;
+  margin-top: 10px;
   margin-bottom: 2px;
   font-size: 20px;
-  max-width: 600px;
+  width: 300px;
 }
 
 .errorDiv {
@@ -70,3 +71,8 @@ body {
   max-height: 150px;
   max-width: auto;
 }
+
+/* header styles */
+/* 
+
+*/

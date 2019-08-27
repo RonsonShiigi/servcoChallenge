@@ -11,8 +11,7 @@ class Form extends Component {
       input: "",
       noSpacesCount: "",
       wordCounter: 0,
-      imageUrl:
-        "https://thumbs.gfycat.com/ConventionalCreamyAlpaca-size_restricted.gif",
+      imageUrl: "https://media2.giphy.com/media/dYPP10IYewLr9CP1q5/source.gif",
       letterCount: 0,
       twoWords: false,
       isHidden: true
@@ -21,8 +20,8 @@ class Form extends Component {
 
   componentDidMount() {
     this.setState({
-      letterCount: 9,
-      selected: "Chevrolet"
+      letterCount: 5,
+      selected: "Lexus"
     });
   }
   handleInputChange = e => {
@@ -127,12 +126,13 @@ class Form extends Component {
         <img id="logo" src={this.state.imageUrl} />
         <form id="form" onSubmit={this.submitForm}>
           <select id="selecter" onChange={this.handleSelectChange}>
-            <option className="select" value="Chevrolet">
-              Chevrolet
-            </option>
             <option className="select" value="Lexus">
               Lexus
             </option>
+            <option className="select" value="Chevrolet">
+              Chevrolet
+            </option>
+
             <option className="select" value="Subaru">
               Subaru
             </option>
